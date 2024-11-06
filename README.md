@@ -172,3 +172,109 @@ A dynamic and interactive portfolio website for Team Avengers, featuring animate
    - Theme toggling
    - Navigation
    - Map marker interactions
+
+## Detailed Component Workflows - Using Diagram
+
+```markdown
+1. index.html
+   └─> loads main.tsx
+
+2. main.tsx
+   └─> renders `<App />` component
+
+3. `App.tsx`
+   ├─> wraps everything in ThemeProvider
+   ├─> sets up Router
+   └─> renders main layout:
+       ├─> `<Navbar />`
+       └─> Routes
+```
+4. Routes flow:
+   
+   a) Landing Page Route ("/"):
+      ```tsx
+      <LandingPage />
+      ├─> Hero Section
+      │   ├─> `<TypedTitle />` (animated text)
+      │   ├─> Iron Man animation
+      │   ├─> Captain America animation
+      │   └─> Wanda animation
+      └─> Content Sections
+      ```
+
+   b) Map Page Route ("/map"):
+      ```tsx
+      <MapPage />
+      ├─> MapContainer
+      │   ├─> TileLayer (map background)
+      │   ├─> `<CustomMarker />` (for each team member)
+      │   │   └─> Popup on hover
+      │   └─> `<BoundsHandler />` (manages map bounds)
+      └─> Page content
+      ```
+
+5. Persistent Components:
+   ```tsx
+   <Navbar />
+   ├─> Logo
+   ├─> Navigation Links
+   │   └─> Mobile Menu (on small screens)
+   └─> Theme Toggle
+   ```
+
+6. Context Flow:
+   ```tsx
+   <ThemeContext />
+   ├─> Manages dark/light mode
+   └─> Provides theme state to all components
+   ```
+
+7. Data Flow:
+   ```tsx
+   teamMembers.ts
+   ├─> Used by MapPage for markers
+   └─> Used by CustomMarker for popup content
+   ```
+
+8. Style Application:
+    ```tsx
+   ├─> Tailwind CSS (utility classes)
+   ├─> global.css (custom styles)
+   └─> Component-specific styles
+```
+
+10. Animation Systems:
+    ```tsx
+   ├─> Framer Motion (component animations)
+   ├─> CSS animations (character movements)
+   └─> Typed.js (text typing effect)
+```
+```
+Key Component Entry/Exit Points:
+
+1. `<App />`
+   - Entry: main.tsx mount
+   - Exit: app closure
+
+2. `<Navbar />`
+   - Entry: App render
+   - Persistent throughout app lifecycle
+
+3. `<LandingPage />`
+   - Entry: "/" route hit
+   - Exit: route change
+
+4. `<MapPage />`
+   - Entry: "/map" route hit
+   - Exit: route change
+
+5. `<CustomMarker />`
+   - Entry: MapPage render
+   - Exit: MapPage unmount
+
+6. `<TypedTitle />`
+   - Entry: LandingPage render
+   - Exit: LandingPage unmount
+```
+
+This represents the complete flow from initial load to component unmount, with each major component highlighted in its own code block.
