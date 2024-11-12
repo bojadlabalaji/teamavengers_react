@@ -10,7 +10,7 @@ import { ThemeProvider } from './context/ThemeContext';
 function App() {
   return (
     <ThemeProvider>
-      <Router basename="/teamavengers_react">
+      <Router>
         <div className="min-h-screen transition-colors duration-300 dark:bg-gray-900">
           <Navbar />
           <Routes>
