@@ -3,6 +3,13 @@ import { motion, useScroll, useTransform } from 'framer-motion';
 import { Shield, Map, FolderGit2 } from 'lucide-react';
 import TypedTitle from '../components/TypedTitle';
 import './LandingPage.css';
+import ironmanGif from '../images/ironman.gif';
+import capGif from '../images/cap.gif';
+import wandaGif from '../images/wanda.gif';
+import teamImage from '../images/team.jpeg';
+import mapImage from '../images/map.jpeg';
+import projectsImage from '../images/projects.jpeg';
+
 const LandingPage = () => {
   return (
     <div className="min-h-screen bg-white dark:bg-gray-900 overflow-hidden">
@@ -11,7 +18,7 @@ const LandingPage = () => {
         {/* Character GIFs */}
         <div className="flying-ironman">
           <img
-            src="/src/images/ironman.gif"
+            src={ironmanGif}
             alt="Iron Man Flying"
             className="w-[150px] h-auto"
           />
@@ -19,7 +26,7 @@ const LandingPage = () => {
 
         <div className="running-cap">
           <img
-            src="/src/images/cap.gif"
+            src={capGif}
             alt="Captain America running"
             className="w-[150px] h-auto"
           />
@@ -27,7 +34,7 @@ const LandingPage = () => {
 
         <div className="floating-wanda">
           <img
-            src="/src/images/wanda.gif"
+            src={wandaGif}
             alt="Wanda floating"
             className="w-[150px] h-auto"
           />
@@ -73,7 +80,7 @@ const LandingPage = () => {
               className="md:w-1/2"
             >
               <img
-                src="/src/images/team.jpeg"
+                src={teamImage}
                 alt="Team"
                 className="rounded-lg shadow-2xl w-[480px] h-[320px] object-cover"
               />
@@ -107,7 +114,7 @@ const LandingPage = () => {
               className="md:w-1/2"
             >
               <img
-                src="/src/images/map.jpeg"
+                src={mapImage}
                 alt="Global Map"
                 className="rounded-lg shadow-2xl w-[480px] h-[320px] object-cover"
               />
@@ -141,7 +148,7 @@ const LandingPage = () => {
               className="md:w-1/2"
             >
               <img
-                src="/src/images/projects.jpeg"
+                src={projectsImage}
                 alt="Projects"
                 className="rounded-lg shadow-2xl w-[480px] h-[320px] object-cover"
               />

@@ -3,6 +3,7 @@ import { Link, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Shield, Map, Users, FolderKanban, Sun, Moon, Menu, X } from 'lucide-react';
 import { useTheme } from '../context/ThemeContext';
+import logo from '../images/logo.png';
 
 const Navbar = () => {
   const [isVisible, setIsVisible] = useState(true);
@@ -49,7 +50,7 @@ const Navbar = () => {
               {/* Logo Section */}
               <Link to="/" className="flex-shrink-0 hover:opacity-80 transition-opacity">
                 <img
-                  src="/src/images/logo.png"
+                  src={logo}
                   alt="Logo"
                   className="h-10 w-auto"
                 />
