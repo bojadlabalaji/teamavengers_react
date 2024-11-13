@@ -9,6 +9,7 @@ import wandaGif from '../images/wanda.gif';
 import teamImage from '../images/team.jpeg';
 import mapImage from '../images/map.jpeg';
 import projectsImage from '../images/projects.jpeg';
+import { Link } from 'react-router-dom';
 
 const LandingPage = () => {
   return (
@@ -67,12 +68,12 @@ const LandingPage = () => {
               <p className="text-gray-700 dark:text-gray-300 mb-6">
                 Meet Earth's mightiest developers, each bringing unique abilities and expertise to defend our world.
               </p>
-              <a
-                href="/team"
+              <Link
+                to="/team"
                 className="inline-block px-6 py-3 bg-red-600 text-white rounded-lg hover:bg-red-700 transition-colors"
               >
                 Meet the Team
-              </a>
+              </Link>
             </motion.div>
             <motion.div
               initial={{ opacity: 0, x: 50 }}
@@ -101,12 +102,12 @@ const LandingPage = () => {
               <p className="text-gray-700 dark:text-gray-300 mb-6">
                 Explore our worldwide network of heroes, ready to respond to any threat, anywhere.
               </p>
-              <a
-                href="/map"
+              <Link
+                to="/map"
                 className="inline-block px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
               >
                 View Map
-              </a>
+              </Link>
             </motion.div>
             <motion.div
               initial={{ opacity: 0, x: -50 }}
@@ -135,12 +136,12 @@ const LandingPage = () => {
               <p className="text-gray-700 dark:text-gray-300 mb-6">
                 Discover the innovative solutions and technologies developed by our team to protect Earth.
               </p>
-              <a
-                href="/projects"
+              <Link
+                to="/projects"
                 className="inline-block px-6 py-3 bg-yellow-600 text-white rounded-lg hover:bg-yellow-700 transition-colors"
               >
                 View Projects
-              </a>
+              </Link>
             </motion.div>
             <motion.div
               initial={{ opacity: 0, x: 50 }}
